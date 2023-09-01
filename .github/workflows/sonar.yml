@@ -26,6 +26,7 @@ jobs:
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
+        GitHub Token: ${{ secrets.GITHUB_TOKEN }}
         projectKey: Github-Action-Scan
     - name: Use GitHub Token
       run: |
