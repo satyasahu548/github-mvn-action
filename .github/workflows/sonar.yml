@@ -8,6 +8,8 @@ on:
   pull_request:
       types: [opened, synchronize, reopened]
 
+ 
+
 name: SonarQube Scan
 jobs:
   sonarqube:
@@ -25,3 +27,7 @@ jobs:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
         projectKey: Github-Action-Scan
+    - name: Use GitHub Token
+      run: |
+        # You can use ${{ secrets.GITHUB_TOKEN }} for actions that require GitHub authentication
+        echo "Using GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
